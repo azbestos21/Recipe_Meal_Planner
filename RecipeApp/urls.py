@@ -1,5 +1,3 @@
-# urls.py
-
 from django.urls import path
 from . import views
 
@@ -11,5 +9,9 @@ urlpatterns = [
     path('recipes/create/', views.recipe_create, name='recipe_create'),
     path('recipes/update/<int:pk>/', views.recipe_update, name='recipe_update'),
     path('recipes/delete/<int:pk>/', views.recipe_delete, name='recipe_delete'),
-    # Add other CRUD URLs for Recipe and MealSchedule as needed
+    path('schedules/', views.meal_schedule_list, name='meal_schedule_list'),
+    path('schedules/create/', views.meal_schedule_create, name='meal_schedule_create'),
+    path('schedules/update/<int:pk>/', views.meal_schedule_update, name='meal_schedule_update'),
+    path('schedules/delete/<int:pk>/', views.meal_schedule_delete, name='meal_schedule_delete'),
+    path('dashboard/', views.dashboard_view, name='dashboard'),  # Add the dashboard view URL
 ]

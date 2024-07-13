@@ -1,20 +1,18 @@
-<!-- Recipe Delete Confirmation Template -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Recipe</title>
+    <title>Delete Meal Schedule</title>
 </head>
 <body>
     <h1>Confirm Deletion</h1>
-    <p>Are you sure you want to delete "{{ recipe.title }}"?</p>
+    <p>Are you sure you want to delete the meal schedule for "{{ schedule.meal_type }}" on "{{ schedule.date }}"?</p>
     <form method="post">
         {% csrf_token %}
         <button type="submit">Confirm Delete</button>
     </form>
-    <a href="{% url 'recipe_list' %}">Cancel</a>
+    <a href="{% url 'meal_schedule_list' %}">Cancel</a>
     <p> <a href="{% url 'dashboard' %}">Dashboard</a></p>
     <p><a href="{% url 'logout' %}">Logout</a></p>
 </body>
