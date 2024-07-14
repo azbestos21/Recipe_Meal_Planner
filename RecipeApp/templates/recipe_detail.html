@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Recipe Details - {{ recipe.title }}</title>
-</head>
-<body>
-    <h1>{{ recipe.title }}</h1>
-    <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
-    <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
-    
-    <a href="{% url 'recipe_update' recipe.pk %}">Edit</a> |
-    <a href="{% url 'recipe_delete' recipe.pk %}">Delete</a> |
-    <a href="{% url 'dashboard' %}">Back to Dashboard</a>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Recipe Details - {{ recipe.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ recipe.title }}</h1>
+<p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+<p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+
+<a href="{% url 'recipe_update' recipe.pk %}">Edit</a> |
+<a href="{% url 'recipe_delete' recipe.pk %}">Delete</a> |
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+{% endblock %}

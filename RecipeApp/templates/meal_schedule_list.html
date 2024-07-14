@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meal Schedule List</title>
-</head>
-<body>
-    <h1>Your Meal Schedules</h1>
-    <ul>
-        {% for schedule in schedules %}
-            <li>{{ schedule.date }} - {{ schedule.meal_type }}: {{ schedule.recipe.title }} - 
-                <a href="{% url 'meal_schedule_update' schedule.pk %}">Edit</a> | 
-                <a href="{% url 'meal_schedule_delete' schedule.pk %}">Delete</a>
-            </li>
-        {% empty %}
-            <li>No meal schedules found.</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'meal_schedule_create' %}">Add New Meal Schedule</a>
-    <p> <a href="{% url 'dashboard' %}">Dashboard</a></p>
-    <p><a href="{% url 'logout' %}">Logout</a></p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Meal Schedule List{% endblock %}
+
+{% block content %}
+<h1>Your Meal Schedules</h1>
+<ul>
+    {% for schedule in schedules %}
+        <li>{{ schedule.date }} - {{ schedule.meal_type }}: {{ schedule.recipe.title }} - 
+            <a href="{% url 'meal_schedule_update' schedule.pk %}">Edit</a> | 
+            <a href="{% url 'meal_schedule_delete' schedule.pk %}">Delete</a>
+        </li>
+    {% empty %}
+        <li>No meal schedules found.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'meal_schedule_create' %}">Add New Meal Schedule</a>
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+{% endblock %}

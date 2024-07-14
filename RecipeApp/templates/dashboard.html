@@ -1,35 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dashboard - Recipe and Meal Planner</title>
-</head>
-<body>
-    <h1>Welcome, {{ user.username }}!</h1>
-    
-    <h2>Your Recipes</h2>
-    <ul>
-        {% for recipe in recipes %}
-            <li>
-                {{ recipe.title }} - 
-                <a href="{% url 'recipe_detail' recipe.pk %}">View</a> - 
-                <a href="{% url 'recipe_update' recipe.pk %}">Edit</a> - 
-                <a href="{% url 'recipe_delete' recipe.pk %}">Delete</a>
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'recipe_create' %}">Create a new recipe</a>
+{% extends "base.html" %}
 
-    <h2>Your Meal Schedules</h2>        
-    <ul>
-        {% for schedule in schedules %}
-            <li>{{ schedule.recipe.title }} for {{ schedule.meal_type }} on {{ schedule.date }} - 
-                <a href="{% url 'meal_schedule_update' schedule.pk %}">Edit</a> - 
-                <a href="{% url 'meal_schedule_delete' schedule.pk %}">Delete</a>
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'meal_schedule_create' %}">Schedule a new meal</a>
+{% block title %}Dashboard - Recipe and Meal Planner{% endblock %}
 
-    <p><a href="{% url 'logout' %}">Logout</a></p>
-</body>
-</html>
+{% block content %}
+<h1>Welcome, {{ user.username }}!</h1>
+
+<h2>Your Recipes</h2>
+<ul>
+    {% for recipe in recipes %}
+        <li>
+            {{ recipe.title }} - 
+            <a href="{% url 'recipe_detail' recipe.pk %}">View</a> - 
+            <a href="{% url 'recipe_update' recipe.pk %}">Edit</a> - 
+            <a href="{% url 'recipe_delete' recipe.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'recipe_create' %}">Create a new recipe</a>
+
+<h2>Your Meal Schedules</h2>        
+<ul>
+    {% for schedule in schedules %}
+        <li>{{ schedule.recipe.title }} for {{ schedule.meal_type }} on {{ schedule.date }} - 
+            <a href="{% url 'meal_schedule_update' schedule.pk %}">Edit</a> - 
+            <a href="{% url 'meal_schedule_delete' schedule.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'meal_schedule_create' %}">Schedule a new meal</a>
+{% endblock %}
