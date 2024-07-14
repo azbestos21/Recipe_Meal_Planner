@@ -31,7 +31,6 @@ def login_view(request):
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})
 
-
 def logout_view(request):
     logout(request)
     return redirect('login')
@@ -73,6 +72,11 @@ def recipe_delete(request, pk):
         recipe.delete()
         return redirect('recipe_list')
     return render(request, 'recipe_confirm_delete.html', {'recipe': recipe})
+
+@login_required
+def recipe_detail(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk, user=request.user)
+    return render(request, 'recipe_detail.html', {'recipe': recipe})
 
 @login_required
 def meal_schedule_list(request):
