@@ -1,90 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
+  font-family: "Quicksand", sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  margin-bottom: 9px;
+  margin-left: 8px;
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+.Main-heading {
+  font-family: "Quicksand", sans-serif;
+  font-size: 40px;
+}
+
+.login-form {
+  border-radius: 15px;
+  box-shadow: 4px 4px 8px gray;
+}
+
+/* styles.css */
+input[type="text"],
+input[type="password"],
+textarea {
+  border: 1.2px solid black;
+  padding: 12px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+button {
+  border-radius: 50px;
+  font-size: 15px;
+  width: 100%;
+  box-shadow: 4px 4px 0px green;
+}
+
+button:hover {
+  box-shadow: 0px 0px 0px green;
+  position: relative;
+  top: 2px;
+  left: 2px;
 }
 
 nav {
-    background-color: #4CAF50;
-    padding: 1em;
+  background-color: #4caf50;
+  padding: 1em;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  background-color: #4caf50;
+  display: flex;
+  padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 10px;
+  background-color: #4caf50;
+  margin-right: 10px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5em 1em;
-    background-color: #4CAF50;
-    border-radius: 3px;
+  color: white;
+  text-decoration: none;
+  background-color: #4caf50;
+  padding: 4px;
+  border-radius: 3px;
 }
 
 nav ul li a:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 .content {
-    padding: 2em;
+  padding: 2em;
 }
 
-h1, h2 {
-    color: #333;
+h1,
+h2 {
+  color: #333;
 }
 
 form {
-    background-color: white;
-    padding: 2em;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 form button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 1em 2em;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 1em 2em;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 form button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 a {
-    color: #4CAF50;
-    text-decoration: none;
+  color: #4caf50;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 ul {
-    background-color: white;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 ul li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 ul li a {
-    margin-left: 10px;
-    color: #4CAF50;
+  margin-left: 10px;
+  color: #4caf50;
 }
 
 ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+.recipe-list {
+  padding: 10px;
 }
